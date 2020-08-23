@@ -1,0 +1,32 @@
+  {% extends 'base.html' %}
+        {% block body_block %}
+
+            <style>
+
+
+
+            </style>
+<div class="container">
+    <div class="jumbotron">
+
+
+<form method="GET" action="">
+<input type="text" name="q" placeholder="Search">
+</form>
+
+{% for x in object_list %}
+
+
+            <h2><em><a href="{{ x.id }}"> {{ x.name }}</a></em></h2>
+
+
+
+{% endfor %}
+
+
+
+
+
+  {% endblock %}
+</div>
+    </div>

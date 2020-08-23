@@ -1,0 +1,41 @@
+  {% extends 'base.html' %}
+        {% block body_block %}
+            <style>
+
+            input,button{
+                width: 100%;
+            }
+            </style>
+<div class="container">
+    <div class="jumbotron">
+
+
+<form method="post" enctype="multipart/form-data">
+
+
+
+
+
+            <h1><em>{{ actor.name }}??</em></h1><br>
+            <br>
+            <form method="post">
+
+            {{ form.as_p }}
+                {% csrf_token %}
+
+
+            <input type="submit" class="btn btn-warning" value="Delete">
+</form>
+<br>
+            <br>
+    <a href="{% url 'app12345:list' %}"><button type="button" class="btn btn-danger">Cancel</button><a>
+
+
+
+
+
+
+
+  {% endblock %}
+</div>
+    </div>

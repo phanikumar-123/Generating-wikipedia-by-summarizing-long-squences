@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<style>
+input{
+    border: 1px solid blue;
+}
+    .jumbotron{
+        border: 5px solid chocolate;
+        border-radius: 10px;
+        box-shadow: 0 0 15px black;
+
+    }
+        body{
+            background-color: aqua;
+        }
+
+</style>
+<body>
+<div class="container">
+    <div class="jumbotron">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'app12345:list' %}">List <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'app12345:register' %}">Register</a>
+      </li>
+
+
+
+        {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'app12345:logout' %}">Logout</a>
+      </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link " href="#">Hi  :{{ user.username }}</a>
+      </li>
+
+
+            {% else %}
+            <li class="nav-item">
+        <a class="nav-link" href="{% url 'app12345:login' %}">Login</a>
+      </li>
+
+    </ul>
+
+{% endif %}
+  </div>
+</nav>
+
+
+
+
+
+</div>
+</div>
+    {% block body_block %}
+
+
+
+
+
+{% endblock %}
+</body>
+</html>
